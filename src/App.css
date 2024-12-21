@@ -1,10 +1,10 @@
 body {
   margin: 0;
   display: flex;
-  flex-direction: column; /* Asegúrate de que los elementos se apilen verticalmente */
-  min-height: 100vh; /* Asegúrate de que el body ocupe al menos la altura de la ventana */
+  flex-direction: column; 
+  min-height: 100vh; 
 }
 
 .container {
-  flex: 1; /* Esto permite que el contenedor principal ocupe el espacio disponible */
+  flex: 1; 
 }
