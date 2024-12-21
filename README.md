@@ -19,7 +19,7 @@ El proyecto hace uso de varias librerías para facilitar el desarrollo y mejorar
 
 - **Vite**: Herramienta de construcción y desarrollo que permite un arranque rápido y recarga en caliente.
 
--**Material-UI**: Biblioteca de componentes de interfaz de usuario que proporciona un diseño moderno y responsivo.
+- **Material-UI**: Biblioteca de componentes de interfaz de usuario que proporciona un diseño moderno y responsivo.
 
 - **Firebase**: Utilizado para la gestión de datos en tiempo real y almacenamiento de productos.
 
