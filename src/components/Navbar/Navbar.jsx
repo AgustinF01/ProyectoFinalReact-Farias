@@ -1,4 +1,3 @@
-// src/components/Navbar/Navbar.jsx
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Badge } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
