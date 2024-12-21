@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Typography, Button, List, ListItem, ListItemText, Box, TextField, Grid, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import { db } from '../firebase'; // Asegúrate de importar tu configuración de Firebase
+import { db } from '../firebase'; 
 import { collection, addDoc } from 'firebase/firestore';
-import jsPDF from 'jspdf'; // Importar jsPDF
+import jsPDF from 'jspdf'; 
 
 const Checkout = ({ cart, removeFromCart, clearCart }) => {
   const [formData, setFormData] = useState({
@@ -18,14 +18,14 @@ const Checkout = ({ cart, removeFromCart, clearCart }) => {
     dni: ''
   });
   
-  const [ticket, setTicket] = useState(null); // Estado para el ticket de compra
-  const [dialogOpen, setDialogOpen] = useState(false); // Estado para el diálogo de eliminación
-  const [selectedItem, setSelectedItem] = useState(null); // Producto seleccionado para eliminar
-  const [quantityToRemove, setQuantityToRemove] = useState(1); // Cantidad a eliminar
+  const [ticket, setTicket] = useState(null); 
+  const [dialogOpen, setDialogOpen] = useState(false); 
+  const [selectedItem, setSelectedItem] = useState(null); 
+  const [quantityToRemove, setQuantityToRemove] = useState(1); 
 
   // Calcular totales
   const total = Object.values(cart).reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const tax = total * 0.21; // Suponiendo un impuesto del 21%
+  const tax = total * 0.21; 
   const totalWithTax = total + tax;
 
   const handleChange = (e) => {
@@ -40,24 +40,24 @@ const Checkout = ({ cart, removeFromCart, clearCart }) => {
     e.preventDefault();
 
     // Generar un ID de compra
-    const purchaseId = `purchase_${Date.now()}`; // Generar un ID único basado en la fecha y hora
+    const purchaseId = `purchase_${Date.now()}`; 
 
     // Crear un objeto de compra
     const purchaseData = {
       purchaseId,
       user: formData,
       cart,
-      totalWithoutTax: total, // Total sin impuestos
-      taxAmount: tax, // Cantidad de impuestos
-      totalWithTax: totalWithTax, // Total con impuestos
+      totalWithoutTax: total, 
+      taxAmount: tax, 
+      totalWithTax: totalWithTax, 
       createdAt: new Date()
     };
 
     try {
       // Subir los datos a Firestore
       await addDoc(collection(db, 'purchases'), purchaseData);
-      setTicket(purchaseData); // Guardar el ticket en el estado
-      clearCart(); // Limpiar el carrito después de la compra
+      setTicket(purchaseData); 
+      clearCart(); 
 
       // Limpiar los campos del formulario
       setFormData({
@@ -79,15 +79,15 @@ const Checkout = ({ cart, removeFromCart, clearCart }) => {
 
   const handleRemoveClick = (item) => {
     setSelectedItem(item);
-    setQuantityToRemove(1); // Reiniciar la cantidad a eliminar
-    setDialogOpen(true); // Abrir el diálogo
+    setQuantityToRemove(1); 
+    setDialogOpen(true); 
   };
 
   const handleConfirmRemove = () => {
     if (selectedItem) {
-      removeFromCart(selectedItem.id, quantityToRemove); // Lógica para eliminar el producto
+      removeFromCart(selectedItem.id, quantityToRemove);
     }
-    setDialogOpen(false); // Cerrar el diálogo
+    setDialogOpen(false);
   };
 
   // Función para generar y descargar el PDF
