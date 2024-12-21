@@ -127,7 +127,10 @@ function App() {
               />
               <Route
                 path="/catalogo"
-                element={<ProductList products={products} addToCart={addToCart} />}
+                element={<ProductList products={products} addToCart={addToCart} selectedCategory={selectedCategory} 
+                onCategoryChange={handleCategoryChange} // Ensure this function is defined
+                priceOrder={priceOrder} 
+                onPriceOrderChange={handlePriceOrderChange}  />}
               />
               <Route
                 path="/producto/:id"
