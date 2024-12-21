@@ -1,9 +1,8 @@
-// src/components/Products/ProductList.jsx
 import React, { useState } from 'react';
 import { Grid, Button, Box } from '@mui/material';
 import ProductItem from './ProductItem';
-import CategoryFilter from './CategoryFilter'; // Importar el filtro de categorías
-import PriceFilter from './PriceFilter'; // Importar el filtro de precios
+import CategoryFilter from './CategoryFilter'; 
+import PriceFilter from './PriceFilter'; 
 
 const ProductList = ({ products, addToCart, selectedCategory, onCategoryChange, priceOrder, onPriceOrderChange }) => {
   const [currentPage, setCurrentPage] = useState(1);
