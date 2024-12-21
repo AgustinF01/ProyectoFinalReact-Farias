@@ -1,4 +1,3 @@
-// src/components/Cart/CartSidebar.jsx
 import React, { useState } from 'react';
 import { Drawer, List, ListItem, ListItemText, Typography, Button, Box, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -13,15 +12,15 @@ const CartSidebar = ({ open, onClose, cart, clearCart, removeFromCart }) => {
 
   const handleRemoveClick = (item) => {
     setSelectedItem(item);
-    setQuantityToRemove(1); // Reiniciar la cantidad a eliminar
-    setDialogOpen(true); // Abrir el diálogo
+    setQuantityToRemove(1); 
+    setDialogOpen(true); 
   };
 
   const handleConfirmRemove = () => {
     if (selectedItem) {
       removeFromCart(selectedItem.id, quantityToRemove);
     }
-    setDialogOpen(false); // Cerrar el diálogo
+    setDialogOpen(false); 
   };
 
   return (
@@ -35,7 +34,7 @@ const CartSidebar = ({ open, onClose, cart, clearCart, removeFromCart }) => {
                 <Button 
                   variant="outlined" 
                   color="secondary" 
-                  onClick={() => handleRemoveClick(item)} // Usar la función para abrir el diálogo
+                  onClick={() => handleRemoveClick(item)} 
                   style={{ width: '100%' }}
                 >
                   Eliminar
