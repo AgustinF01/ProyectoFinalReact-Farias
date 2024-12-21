@@ -1,15 +1,14 @@
-// src/components/Products/ProductItem.jsx
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const ProductItem = ({ product, addToCart }) => {
   return (
-    <Card sx={{ maxWidth: 200, margin: 'auto' }}> {/* Cambiar maxWidth a 200 */}
+    <Card sx={{ maxWidth: 200, margin: 'auto' }}> 
       <Link to={`/producto/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
         <CardMedia
           component="img"
-          height="120" // Ajustar la altura de la imagen
+          height="120" 
           image={product.imageURL}
           alt={product.title}
           sx={{ objectFit: 'cover' }}
