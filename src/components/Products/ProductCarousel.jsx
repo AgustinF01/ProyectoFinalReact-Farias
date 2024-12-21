@@ -1,4 +1,3 @@
-// src/components/Products/ProductCarousel.jsx
 import React from 'react';
 import Slider from 'react-slick';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';

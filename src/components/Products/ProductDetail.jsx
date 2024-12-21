@@ -1,4 +1,3 @@
-// src/components/ProductDetail.jsx
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import { useParams } from 'react-router-dom';

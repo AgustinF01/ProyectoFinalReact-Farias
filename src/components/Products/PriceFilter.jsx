@@ -1,4 +1,3 @@
-// src/components/Products/PriceFilter.jsx
 import React from 'react';
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 

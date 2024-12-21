@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import React from 'react';
 import { Container, Typography, Box } from '@mui/material';
 
@@ -11,7 +10,7 @@ const Footer = () => {
         color: 'white', 
         py: 2, 
         width: '100%', 
-        position: 'relative', // Cambiar a relative para que no esté fijo
+        position: 'relative', 
         marginTop: '10%',
       }}
     >

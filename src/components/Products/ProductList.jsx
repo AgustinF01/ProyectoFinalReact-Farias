@@ -1,9 +1,8 @@
-// src/components/Products/ProductList.jsx
 import React, { useState } from 'react';
 import { Grid, Button, Box } from '@mui/material';
 import ProductItem from './ProductItem';
-import CategoryFilter from './CategoryFilter'; // Importar el filtro de categorías
-import PriceFilter from './PriceFilter'; // Importar el filtro de precios
+import CategoryFilter from './CategoryFilter'; 
+import PriceFilter from './PriceFilter'; 
 
 const ProductList = ({ products, addToCart, selectedCategory, onCategoryChange, priceOrder, onPriceOrderChange }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,11 +14,11 @@ const ProductList = ({ products, addToCart, selectedCategory, onCategoryChange, 
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     if (priceOrder === 'lowToHigh') {
-      return a.price - b.price; // Ordenar de menor a mayor
+      return a.price - b.price;
     } else if (priceOrder === 'highToLow') {
-      return b.price - a.price; // Ordenar de mayor a menor
+      return b.price - a.price; 
     }
-    return 0; // Sin orden
+    return 0; 
   });
 
   // Calcular los índices de los productos a mostrar
@@ -38,7 +37,7 @@ const ProductList = ({ products, addToCart, selectedCategory, onCategoryChange, 
       <Grid container spacing={2} style={{ marginBottom: '20px' }}>
         <Grid item xs={12} sm={6} md={4}>
           <CategoryFilter 
-            categories={[...new Set(products.map(product => product.category))]} // Obtener categorías únicas
+            categories={[...new Set(products.map(product => product.category))]} 
             selectedCategory={selectedCategory}
             onCategoryChange={onCategoryChange}
           />
