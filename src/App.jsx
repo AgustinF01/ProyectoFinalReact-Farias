@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductList from './components/Products/ProductList';
@@ -12,7 +11,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { Container, Typography, Button, Box } from '@mui/material';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import Loading from './components/Loading'; // Importar el componente de loading
+import Loading from './components/Loading'; 
 import { ToastContainer, toast } from 'react-toastify';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -79,7 +78,7 @@ function App() {
         }
         toast.success(`Se eliminaron ${quantity} de ${newCart[productId]?.title || 'producto'} del carrito!`);
       }
-      localStorage.setItem('cart', JSON.stringify(newCart)); // Guardar en localStorage
+      localStorage.setItem('cart', JSON.stringify(newCart)); 
       return newCart;
     });
   };
@@ -128,7 +127,7 @@ function App() {
               <Route
                 path="/catalogo"
                 element={<ProductList products={products} addToCart={addToCart} selectedCategory={selectedCategory} 
-                onCategoryChange={handleCategoryChange} // Ensure this function is defined
+                onCategoryChange={handleCategoryChange} 
                 priceOrder={priceOrder} 
                 onPriceOrderChange={handlePriceOrderChange}  />}
               />
