@@ -39,10 +39,10 @@ const Checkout = ({ cart, removeFromCart, clearCart }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
+    // Generar un ID de compra
     const purchaseId = `purchase_${Date.now()}`; 
 
-    
+    // Crear un objeto de compra
     const purchaseData = {
       purchaseId,
       user: formData,
@@ -59,7 +59,7 @@ const Checkout = ({ cart, removeFromCart, clearCart }) => {
       setTicket(purchaseData); 
       clearCart(); 
 
-      
+      // Limpiar los campos del formulario
       setFormData({
         name: '',
         lastName: '',
@@ -85,9 +85,9 @@ const Checkout = ({ cart, removeFromCart, clearCart }) => {
 
   const handleConfirmRemove = () => {
     if (selectedItem) {
-      removeFromCart(selectedItem.id, quantityToRemove); 
+      removeFromCart(selectedItem.id, quantityToRemove);
     }
-    setDialogOpen(false); 
+    setDialogOpen(false);
   };
 
   // Función para generar y descargar el PDF

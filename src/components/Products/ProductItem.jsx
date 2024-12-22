@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ProductItem = ({ product, addToCart }) => {
   return (
-    <Card sx={{ maxWidth: 200, margin: 'auto' }}>
+    <Card sx={{ maxWidth: 200, margin: 'auto' }}> 
       <Link to={`/producto/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
         <CardMedia
           component="img"

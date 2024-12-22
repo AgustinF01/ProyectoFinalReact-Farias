@@ -78,7 +78,7 @@ function App() {
         }
         toast.success(`Se eliminaron ${quantity} de ${newCart[productId]?.title || 'producto'} del carrito!`);
       }
-      localStorage.setItem('cart', JSON.stringify(newCart));
+      localStorage.setItem('cart', JSON.stringify(newCart)); 
       return newCart;
     });
   };
@@ -127,7 +127,7 @@ function App() {
               <Route
                 path="/catalogo"
                 element={<ProductList products={products} addToCart={addToCart} selectedCategory={selectedCategory} 
-                onCategoryChange={handleCategoryChange}
+                onCategoryChange={handleCategoryChange} 
                 priceOrder={priceOrder} 
                 onPriceOrderChange={handlePriceOrderChange}  />}
               />
