@@ -138,7 +138,7 @@ function App() {
                 onCategoryChange={handleCategoryChange} 
                 priceOrder={priceOrder} 
                 onPriceOrderChange={handlePriceOrderChange}  />}
-                cart={cart} // Asegúrate de pasar el carrito aquí
+                cart={cart} 
               />
               <Route
                 path="/producto/:id"

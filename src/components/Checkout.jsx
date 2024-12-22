@@ -269,7 +269,7 @@ const Checkout = ({ cart, removeFromCart, clearCart }) => {
         </Button>
       </form>
 
-      {/* Mostrar el ticket de compra si se ha generado */}
+      
       {ticket && (
         <Box mt={4}>
           <Typography variant="h5" align="center">Ticket de Compra</Typography>

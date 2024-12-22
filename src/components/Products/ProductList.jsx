@@ -52,7 +52,7 @@ const ProductList = ({ products, addToCart, selectedCategory, onCategoryChange, 
       <Grid container spacing={2}>
         {currentItems.map(product => (
           <Grid item xs={6} sm={3} key={product.id}>
-            <ProductItem product={product} addToCart={addToCart} cart={cart} /> {/* Pasar el carrito aquí */}
+            <ProductItem product={product} addToCart={addToCart} cart={cart} /> 
           </Grid>
         ))}
       </Grid>

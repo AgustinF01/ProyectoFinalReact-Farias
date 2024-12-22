@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ProductItem = ({ product, addToCart, cart }) => {
   // Verificar la cantidad actual en el carrito
-  const currentQuantity = cart && cart[product.id] ? cart[product.id].quantity : 0; // Asegurarse de que cart esté definido
+  const currentQuantity = cart && cart[product.id] ? cart[product.id].quantity : 0; 
 
   return (
     <Card sx={{ maxWidth: 200, margin: 'auto' }}> 
