@@ -20,8 +20,9 @@ const ProductDetail = ({ products, addToCart }) => {
       />
       <CardContent>
         <Typography variant="h4">{product.title}</Typography>
-        <Typography variant="h6">${product.price}</Typography>
         <Typography variant="body1">{product.description}</Typography>
+        <Typography variant="body2">Stock: {product.stock}</Typography>
+        <Typography variant="h5">${product.price}</Typography>
         <Button variant="contained" color="primary" onClick={() => addToCart(product)}>
           Agregar al carrito
         </Button>

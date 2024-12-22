@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -11,8 +12,16 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APP_ID,
 };
 
+// Función para actualizar el stock de un producto
+const updateProductStock = async (productId, newStock) => {
+  const productRef = doc(db, 'products', productId);
+  await updateDoc(productRef, {
+    stock: newStock
+  });
+};
+
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export { db };
+export { db, updateProductStock };

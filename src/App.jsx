@@ -48,12 +48,20 @@ function App() {
   const addToCart = (product) => {
     setCart(prevCart => {
       const newCart = { ...prevCart };
-      if (newCart[product.id]) {
-        newCart[product.id].quantity += 1;
+      const currentQuantity = newCart[product.id] ? newCart[product.id].quantity : 0;
+  
+      // Verificar si se puede agregar más del stock disponible
+      if (currentQuantity < product.stock) {
+        if (newCart[product.id]) {
+          newCart[product.id].quantity += 1;
+        } else {
+          newCart[product.id] = { ...product, quantity: 1 };
+        }
+        toast.success(`${product.title} agregado al carrito!`);
       } else {
-        newCart[product.id] = { ...product, quantity: 1 };
+        toast.error(`No puedes agregar más de ${product.stock} unidades de ${product.title}.`);
       }
-      toast.success(`${product.title} agregado al carrito!`);
+  
       localStorage.setItem('cart', JSON.stringify(newCart));
       return newCart;
     });
@@ -130,6 +138,7 @@ function App() {
                 onCategoryChange={handleCategoryChange} 
                 priceOrder={priceOrder} 
                 onPriceOrderChange={handlePriceOrderChange}  />}
+                cart={cart} // Asegúrate de pasar el carrito aquí
               />
               <Route
                 path="/producto/:id"

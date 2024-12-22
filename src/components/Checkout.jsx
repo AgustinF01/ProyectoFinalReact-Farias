@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Typography, Button, List, ListItem, ListItemText, Box, TextField, Grid, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import { db } from '../firebase'; 
+import { db, updateProductStock } from '../firebase'; 
 import { collection, addDoc } from 'firebase/firestore';
 import jsPDF from 'jspdf'; 
 
@@ -54,8 +54,15 @@ const Checkout = ({ cart, removeFromCart, clearCart }) => {
     };
 
     try {
-      
+      // Guardar la compra en Firestore
       await addDoc(collection(db, 'purchases'), purchaseData);
+      
+      // Actualizar el stock de cada producto en la base de datos
+      for (const item of Object.values(cart)) {
+        const newStock = item.stock - item.quantity; // Calcular el nuevo stock
+        await updateProductStock(item.id, newStock); // Actualizar el stock en Firestore
+      }
+
       setTicket(purchaseData); 
       clearCart(); 
 

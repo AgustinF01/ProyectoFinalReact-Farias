@@ -4,7 +4,7 @@ import ProductItem from './ProductItem';
 import CategoryFilter from './CategoryFilter'; 
 import PriceFilter from './PriceFilter'; 
 
-const ProductList = ({ products, addToCart, selectedCategory, onCategoryChange, priceOrder, onPriceOrderChange }) => {
+const ProductList = ({ products, addToCart, selectedCategory, onCategoryChange, priceOrder, onPriceOrderChange, cart }) => { // Asegúrate de recibir cart aquí
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
@@ -52,7 +52,7 @@ const ProductList = ({ products, addToCart, selectedCategory, onCategoryChange, 
       <Grid container spacing={2}>
         {currentItems.map(product => (
           <Grid item xs={6} sm={3} key={product.id}>
-            <ProductItem product={product} addToCart={addToCart} />
+            <ProductItem product={product} addToCart={addToCart} cart={cart} /> {/* Pasar el carrito aquí */}
           </Grid>
         ))}
       </Grid>
