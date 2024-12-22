@@ -35,7 +35,7 @@ El proyecto hace uso de varias librerías para facilitar el desarrollo y mejorar
 
 - **Vite**: Herramienta de construcción y desarrollo que permite un arranque rápido y recarga en caliente.
 
--**Material-UI**: Biblioteca de componentes de interfaz de usuario que proporciona un diseño moderno y responsivo.
+- **Material-UI**: Biblioteca de componentes de interfaz de usuario que proporciona un diseño moderno y responsivo.
 
 - **Firebase**: Utilizado para la gestión de datos en tiempo real y almacenamiento de productos.
 
@@ -55,3 +55,4 @@ El proyecto hace uso de varias librerías para facilitar el desarrollo y mejorar
 - **Checkout**: Al finalizar la compra, los usuarios completan un formulario con su información y pueden descargar un ticket de compra en PDF.
 
 - **Persistencia**: El carrito de compras se guarda en el almacenamiento local del navegador, permitiendo que los usuarios mantengan su selección incluso si recargan la página.
+- **Stock**: No permite al usuario añadir mas productos al carrito de los que hay disponibles y cuando estos se agotan, se actualiza el estado para que no permita añadir mas de dicho producto actualizando asi la base de datos con cada compra.
