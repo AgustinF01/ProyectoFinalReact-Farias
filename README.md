@@ -40,3 +40,6 @@ El proyecto hace uso de varias librerías para facilitar el desarrollo y mejorar
 
 - **Persistencia**: El carrito de compras se guarda en el almacenamiento local del navegador, permitiendo que los usuarios mantengan su selección incluso si recargan la página.
 - **Stock**: No permite al usuario añadir mas productos al carrito de los que hay disponibles y cuando estos se agotan, se actualiza el estado para que no permita añadir mas de dicho producto actualizando asi la base de datos con cada compra.
+
+**ACLARACION**
+El stock de productos se actualiza al realizar una recarga manual del sitio ya que si agregaba la funcion de recargar la pagina de forma automatica luego de hacer una compra, se perdian los datos del ticket por lo que luego de hacer una compra y regresar al catalogo de productos, el numero de stock no reflejara los cambios hasta hacer una recarga del sitio.
