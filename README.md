@@ -14,22 +14,6 @@ El proyecto está estructurado de la siguiente manera:
 # Librerías Utilizadas
 
 El proyecto hace uso de varias librerías para facilitar el desarrollo y mejorar la experiencia del usuario:
-# Supercotito - Proyecto de E-commerce
-
-Supercotito es una aplicación de comercio electrónico desarrollada con React y Vite, que permite a los usuarios navegar por un catálogo de productos, agregar artículos a un carrito de compras y realizar el proceso de checkout. La aplicación está diseñada para ser intuitiva y fácil de usar, ofreciendo una experiencia de compra fluida.
-
-# Composición del Proyecto
-El proyecto está estructurado de la siguiente manera:
-
-- **Componentes**: La aplicación está dividida en varios componentes reutilizables, como Navbar, Footer, ProductList, ProductDetail, CartSidebar, y más, que manejan diferentes partes de la interfaz de usuario.
-
-- **Rutas**: Utiliza react-router-dom para gestionar la navegación entre diferentes vistas, como el catálogo de productos, detalles del producto y el proceso de checkout.
-
-- **Estado Global**: Se utiliza el estado local de React para manejar el carrito de compras y la selección de productos.
-
-# Librerías Utilizadas
-
-El proyecto hace uso de varias librerías para facilitar el desarrollo y mejorar la experiencia del usuario:
 
 - **React**: Biblioteca principal para construir la interfaz de usuario.
 
