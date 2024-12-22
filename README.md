@@ -14,28 +14,12 @@ El proyecto está estructurado de la siguiente manera:
 # Librerías Utilizadas
 
 El proyecto hace uso de varias librerías para facilitar el desarrollo y mejorar la experiencia del usuario:
-# Supercotito - Proyecto de E-commerce
-
-Supercotito es una aplicación de comercio electrónico desarrollada con React y Vite, que permite a los usuarios navegar por un catálogo de productos, agregar artículos a un carrito de compras y realizar el proceso de checkout. La aplicación está diseñada para ser intuitiva y fácil de usar, ofreciendo una experiencia de compra fluida.
-
-# Composición del Proyecto
-El proyecto está estructurado de la siguiente manera:
-
-- **Componentes**: La aplicación está dividida en varios componentes reutilizables, como Navbar, Footer, ProductList, ProductDetail, CartSidebar, y más, que manejan diferentes partes de la interfaz de usuario.
-
-- **Rutas**: Utiliza react-router-dom para gestionar la navegación entre diferentes vistas, como el catálogo de productos, detalles del producto y el proceso de checkout.
-
-- **Estado Global**: Se utiliza el estado local de React para manejar el carrito de compras y la selección de productos.
-
-# Librerías Utilizadas
-
-El proyecto hace uso de varias librerías para facilitar el desarrollo y mejorar la experiencia del usuario:
 
 - **React**: Biblioteca principal para construir la interfaz de usuario.
 
 - **Vite**: Herramienta de construcción y desarrollo que permite un arranque rápido y recarga en caliente.
 
--**Material-UI**: Biblioteca de componentes de interfaz de usuario que proporciona un diseño moderno y responsivo.
+- **Material-UI**: Biblioteca de componentes de interfaz de usuario que proporciona un diseño moderno y responsivo.
 
 - **Firebase**: Utilizado para la gestión de datos en tiempo real y almacenamiento de productos.
 
@@ -55,3 +39,7 @@ El proyecto hace uso de varias librerías para facilitar el desarrollo y mejorar
 - **Checkout**: Al finalizar la compra, los usuarios completan un formulario con su información y pueden descargar un ticket de compra en PDF.
 
 - **Persistencia**: El carrito de compras se guarda en el almacenamiento local del navegador, permitiendo que los usuarios mantengan su selección incluso si recargan la página.
+- **Stock**: No permite al usuario añadir mas productos al carrito de los que hay disponibles y cuando estos se agotan, se actualiza el estado para que no permita añadir mas de dicho producto actualizando asi la base de datos con cada compra.
+
+**ACLARACION**
+El stock de productos se actualiza al realizar una recarga manual del sitio ya que si agregaba la funcion de recargar la pagina de forma automatica luego de hacer una compra, se perdian los datos del ticket por lo que luego de hacer una compra y regresar al catalogo de productos, el numero de stock no reflejara los cambios hasta hacer una recarga del sitio.
